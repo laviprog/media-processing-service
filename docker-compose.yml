@@ -1,0 +1,18 @@
+services:
+  media-processing-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: media-processing-service
+    image: media-processing-service:latest
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:8000:8000"
+    networks:
+      - media-processing-network
+
+networks:
+  media-processing-network:
+    name: media-processing-network
+    driver: bridge

@@ -1,0 +1,11 @@
+.venv
+.idea
+.vs-code
+.gitignore
+.python-version
+README.md
+.git
+.env.example
+docker-compose.yml
+.dockerignore
+Dockerfile
