@@ -1,7 +1,7 @@
 import asyncio
 from typing import Annotated
 
-from fastapi import APIRouter, File, Form, UploadFile, HTTPException
+from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import FileResponse
 from starlette.background import BackgroundTask
@@ -104,4 +104,4 @@ async def embed_subtitles(
 
     except Exception as e:
         cleanup_files(*created_files)
-        raise HTTPException(status_code=500, detail=f"Failed to process video")
+        raise HTTPException(status_code=500, detail="Failed to process video") from e
